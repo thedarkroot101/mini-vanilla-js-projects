@@ -30,8 +30,19 @@ buttons.forEach((button) => {
 	button.addEventListener("click", () => {
 		const playerChoice = button.id;
 		const compChoice = CompChoice();
-		console.log(compChoice);
 		const winner = findWinner(playerChoice, compChoice);
-		console.log(winner);
+
+		compChoiceEl.textContent = compChoice;
+		if (winner === "win") {
+			resultEl.textContent = "You win!";
+			score.player += 1;
+		} else if (winner === "lose") {
+			resultEl.textContent = "You lose!";
+			score.comp += 1;
+		} else {
+			resultEl.textContent = "It's a tie!";
+			score.tie += 1;
+		}
+		updateScore(score.player, score.tie, score.comp);
 	});
 });
