@@ -1,15 +1,26 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rpc Game</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RPS Game</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="index.js" defer></script>
 </head>
 
 <body>
-    <h1>Rock,Paper,Scissors</h1>
+	<h1>Rock Paper Scissors</h1>
+	<h3>Choose your move:</h3>
+	<div class="choices">
+		<button id="rock">Rock</button>
+		<button id="paper">Paper</button>
+		<button id="scissors">Scissors</button>
+	</div>
+	<h3>computer move:
+		<span id="computer-choice"></span>
+	</h3>
+	<div id="result"><!-- who win --></div>
+	<div id="score">Player: 0 | Tie: 0 | Computer: 0</div>
 </body>
 
 </html>
