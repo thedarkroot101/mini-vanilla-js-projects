@@ -2,7 +2,7 @@ const buttons = document.querySelectorAll(".choices button");
 const compChoiceEl = document.getElementById("comp-choice");
 const resultEl = document.getElementById("result");
 const scoreEl = document.getElementById("score");
-const score = {
+let score = {
 	player: 0,
 	tie: 0,
 	comp: 0
@@ -21,10 +21,17 @@ function findWinner(p, c) {
 	return "lose";
 }
 
+function updateScore(player = 0, tie = 0, comp = 0) {
+	scoreEl.textContent = `Player: ${player} | Tie: ${tie} | Computer: ${comp}`;
+	score = { player, tie, comp };
+}
+updateScore();
 buttons.forEach((button) => {
 	button.addEventListener("click", () => {
 		const playerChoice = button.id;
 		const compChoice = CompChoice();
+		console.log(compChoice);
 		const winner = findWinner(playerChoice, compChoice);
+		console.log(winner);
 	});
 });
