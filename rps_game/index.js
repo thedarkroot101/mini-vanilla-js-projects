@@ -34,7 +34,6 @@ function getEmoji(choice) {
 }
 
 function resetGame() {
-  score = { player: 0, tie: 0, comp: 0 };
   updateScore();
   compChoiceEl.textContent = "";
   resultEl.textContent = "";
